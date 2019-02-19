@@ -1,22 +1,27 @@
 class Car
-  def mileage
-    return 12
-  end
-
-  def color
-    return "sunburst orange"
+  attr_accessor :mileage, :color, :miles
+  
+  def initialize(mileage, color, miles)
+    @mileage = mileage
+    @color = color
   end
 
   def honk_horn
     puts "*Honk!*"
   end
+
+  def drive
+    @mileage += miles
+    puts "*drives #{:miles} miles*"
+  end
 end
 
-bessy = Car.new
+bessy = Car.new(24, "Sunburst Orange", 1)
 
 puts bessy.mileage
 puts bessy.color
 bessy.honk_horn
+puts bessy.drive
 
 class Bike
   def color
