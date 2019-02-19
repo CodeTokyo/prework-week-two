@@ -1,7 +1,7 @@
 class Car
-  attr_accessor :mileage, :color, :miles
+  attr_accessor :mileage, :color
   
-  def initialize(mileage, color, miles)
+  def initialize(mileage, color)
     @mileage = mileage
     @color = color
   end
@@ -11,12 +11,13 @@ class Car
   end
 
   def drive
+    miles = 12
     @mileage += miles
-    puts "*drives #{:miles} miles*"
+    puts "*drives #{miles} miles*"
   end
 end
 
-bessy = Car.new(24, "Sunburst Orange", 1)
+bessy = Car.new(24, "Sunburst Orange")
 
 puts bessy.mileage
 puts bessy.color
