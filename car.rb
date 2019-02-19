@@ -1,13 +1,22 @@
-class Car
-  attr_accessor :mileage, :color
-  
-  def initialize(mileage, color)
-    @mileage = mileage
+class Vehicle
+  attr_accessor :color
+
+  def initialize (color)
     @color = color
   end
 
   def honk_horn
     puts "*Honk!*"
+  end
+end
+
+
+class Car < Vehicle
+  attr_accessor :mileage
+  
+  def initialize(mileage, color)
+    super(color)
+    @mileage = mileage
   end
 
   def drive
@@ -17,20 +26,16 @@ class Car
   end
 end
 
-bessy = Car.new(24, "Sunburst Orange")
+bessy = Car.new(24, "Orange")
 
 puts bessy.mileage
 puts bessy.color
 bessy.honk_horn
 puts bessy.drive
 
-class Bike
-  def color
-    return "atom bomb purple"
-  end
-
-  def honk_horn
-    puts "*Honk!*"
+class Bike < Vehicle
+  def initialize(color)
+    super(color)
   end
 
   def ride
@@ -38,7 +43,7 @@ class Bike
   end
 end
 
-monica = Bike.new
+monica = Bike.new("Purple")
 
 puts monica.color
 puts monica.honk_horn
