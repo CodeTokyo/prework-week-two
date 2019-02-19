@@ -1,15 +1,4 @@
-class Vehicle
-  attr_accessor :color
-
-  def initialize (color)
-    @color = color
-  end
-
-  def honk_horn
-    puts "*Honk!*"
-  end
-end
-
+require_relative "vehicle"
 
 class Car < Vehicle
   attr_accessor :mileage
@@ -32,19 +21,3 @@ puts bessy.mileage
 puts bessy.color
 bessy.honk_horn
 puts bessy.drive
-
-class Bike < Vehicle
-  def initialize(color)
-    super(color)
-  end
-
-  def ride
-    puts "*Rides bike*"
-  end
-end
-
-monica = Bike.new("Purple")
-
-puts monica.color
-puts monica.honk_horn
-monica.ride
